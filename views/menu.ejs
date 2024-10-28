@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Menu</title>
+    </head>
+    <body>
+        <%- include('./partials/nav') %>
+
+        <h1>Full Menu</h1>
+
+        <% for (const category in menu) { %>
+        <h2 style="text-transform: uppercase"><%= category%></h2>
+        <% menu[category].forEach((item)=>{ %>
+        <h4 style="margin-bottom: 0; text-transform: uppercase">
+            <%= item.name %>
+        </h4>
+        <p style="margin: 0"><%= item.details %></p>
+        <p style="margin-top: 0">
+            <b>Price:</b> $<%= item.price %> <b>Rated:</b> <%= item.rating %>
+        </p>
+        <% }) %> <% } %>
+    </body>
+</html>
